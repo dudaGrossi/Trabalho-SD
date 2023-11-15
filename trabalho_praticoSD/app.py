@@ -1,5 +1,5 @@
-from flask import Flask,render_template
-from youtubeApi import getComments
+from flask import Flask, render_template, request, jsonify
+from youtubeApi import getComments, search_videos
 
 app=Flask(__name__,template_folder='template')
 
@@ -12,10 +12,17 @@ def home():
     comments = getComments(videoId)
     return render_template("home.html", comments=comments)
 
+@app.route('/api/videos', methods=['POST'])
+def buscar_videos():
+    termo_pesquisa = request.form['termo']
+    resultados = search_videos(termo_pesquisa)
+    return jsonify(render_template('home.html', videos=resultados))
+
+
 @app.route("/about/")
 def about():
     return render_template('about.html')
 
 #colocar o site no ar
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True) 
