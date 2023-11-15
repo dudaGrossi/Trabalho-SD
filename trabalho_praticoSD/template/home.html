@@ -11,10 +11,13 @@
         <img src = "/imagens/youtube-logo-5-2.png" alt="Logo do youtube">
     </div>
 
-    <form class="example" action="action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+    <form onsubmit="pesquisarVideos(event)">
+        <input type="text" id="termoPesquisa" placeholder="Pesquise" name="search">
+        <button type="submit" value="Pesquisar"></button>
     </form>
+
+    <div id="resultados"></div>
+
     <ul>
         {% for comment in comments %}
         <li>
@@ -22,5 +25,8 @@
         </li>
         {% endfor %}
     </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
