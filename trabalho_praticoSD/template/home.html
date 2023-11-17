@@ -6,25 +6,29 @@
     <title>YoutubeComments</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <div class = 'cabecalho'>
+    <div class='cabecalho'>
         <h1>YoutubeComments</h1>
         <img id="logo-ytb" src="imagens/youtube-logo-5-2.png" alt="Logo do Youtube">
     </div>
 
-    <form onsubmit="pesquisarVideos(event)">
-        <input type="text" id="termoPesquisa" placeholder="..." name="search">
+    <form action="{{ url_for('buscar_videos') }}" method="post">
+        <input type="text" id="termoPesquisa" placeholder="Digite o termo de pesquisa..." name="search">
         <button type="submit">Pesquisar</button>
     </form>
 
     <div id="resultados">
-        {% for video in videos %}
-            <p>{{ video.title }} - ID: {{ video.video_id }}</p>
+        {% for item in comentarios_por_video %}
+            <h2>{{ item['video']['title'] }}</h2>
+            {% for comentario in item['comentarios'] %}
+                <p>{{ comentario['comment'] }} - {{ comentario['author'] }}</p>
+            {% endfor %}
         {% endfor %}
     </div>
-    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
+
 </html>
