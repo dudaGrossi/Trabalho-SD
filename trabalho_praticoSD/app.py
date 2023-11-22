@@ -17,6 +17,10 @@ def buscar_videos():
     for video in videos:
         video_id = video['video_id']
         comentarios = getComments(video_id)[:5]
+        
+        # Adicione a URL do vídeo aos resultados
+        video['url'] = f"https://www.youtube.com/watch?v={video_id}"
+
         comentarios_por_video.append({'video': video, 'comentarios': comentarios})
 
     return render_template("home.html", comentarios_por_video=comentarios_por_video)

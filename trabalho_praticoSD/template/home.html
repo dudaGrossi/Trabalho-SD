@@ -20,7 +20,7 @@
 
     <div id="resultados">
         {% for item in comentarios_por_video %}
-            <h2>{{ item['video']['title'] }}</h2>
+            <h2><a href="{{ item['video']['url'] }}" target="_blank">{{ item['video']['title'] }}</a></h2>
             {% for comentario in item['comentarios'] %}
                 <p>{{ comentario['comment'] }} - {{ comentario['author'] }}</p>
             {% endfor %}
