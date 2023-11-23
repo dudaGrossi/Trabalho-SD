@@ -10,7 +10,7 @@
 <body>
     <div class='cabecalho'>
         <h1>YoutubeComments</h1>
-        <img id="logo-ytb" src="imagens/youtube-logo-5-2.png" alt="Logo do Youtube">
+        <img id="logo-ytb" src="{{ url_for('download_file', filename='youtube-logo-5-2.png') }}" alt="Logo do Youtube">
     </div>
 
     <form action="{{ url_for('buscar_videos') }}" method="post">
