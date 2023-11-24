@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, send_from_directory
 import os
-from youtubeApi import getComments, search_videos
+from youtubeApi import getComments, search_videos, adicionarCSV, save_to_csv
 import numpy as np
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import base64
 import nltk
 from nltk.corpus import stopwords
+
+nltk.download('stopwords')
 
 app = Flask(__name__, template_folder='template', static_url_path='')
 
@@ -31,8 +33,8 @@ def buscar_videos():
         # WordCloud para os cinco primeiros comentários de cada vídeo
         wordcloud = WordCloud(
             background_color='black',
-            width=800,
-            height=400,
+            width=400,
+            height=200,
             stopwords=set(stopwords.words('portuguese'))
         ).generate(' '.join(comentario['comment'] for comentario in comentarios))
 
@@ -76,5 +78,11 @@ def about():
 def download_file(filename):
     return send_from_directory(os.path.join(app.root_path, 'imagens'), filename)
 
+@app.route('/api/salvarcsv/<video_id>', methods=['GET'])
+def salvar_csv(video_id):
+    comentarios = adicionarCSV(video_id)
+    save_to_csv(comentarios)
+
+    return 'Dados salvos em arquivo CSV!'
 if __name__=="__main__":
     app.run(debug=True)
