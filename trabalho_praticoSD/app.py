@@ -42,6 +42,9 @@ def buscar_videos():
         comentarios_por_video.append({'video': video, 'comentarios': comentarios})
         wordclouds_por_video.append({'video': video, 'wordcloud': wordcloud})
 
+        #Salva os dados no csv
+        save_to_csv(video, comentarios)
+
     # Gera as imagens das nuvens de palavras e salva temporariamente
     imagens_por_video = []
     for i, wordcloud_data in enumerate(wordclouds_por_video):
@@ -84,5 +87,6 @@ def salvar_csv(video_id):
     save_to_csv(comentarios)
 
     return 'Dados salvos em arquivo CSV!'
+
 if __name__=="__main__":
     app.run(debug=True)

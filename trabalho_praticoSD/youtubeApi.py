@@ -1,8 +1,9 @@
 from googleapiclient.discovery import build
 import csv
+import os
 
 # Substitua 'YOUR_API_KEY' com a sua chave de API
-api_key = "AIzaSyBAvzcfBS0o5lYGNXYKRkh9bKcHGbme3NI"
+api_key = "YOUR_API_KEY"
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 
@@ -58,33 +59,41 @@ def adicionarCSV(video_id):
         maxResults=6
     ).execute()
 
-    #Cria uma lista de comentários
+    # Cria uma lista de comentários
     comments = []
 
-    #Preenche a lista de comentários com os atributos 'Autor' e 'Comentário'
+    # Preenche a lista de comentários com os atributos 'Autor' e 'Comentário'
     for item in response['items']:
         comment = item['snippet']['topLevelComment']['snippet']['textOriginal']
         author = item['snippet']['topLevelComment']['snippet']['authorDisplayName']
-        #video_title = item['snippet']['title'] 
         comments.append({'author': author, 'comment': comment})
 
     return comments
 
-def save_to_csv(data):
+def save_to_csv(video_info, data):
     # Nome do arquivo CSV para salvar os dados
     csv_file = 'videos_comentarios.csv'
 
     # Cabeçalhos para as colunas do CSV
     fieldnames = ['video_title', 'author', 'comment']
 
-    with open(csv_file, mode='w', newline='', encoding='utf-8') as file:
+    # Verifica se o arquivo CSV já existe
+    file_exists = os.path.isfile(csv_file)
+
+    with open(csv_file, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
 
-        # Escrever o cabeçalho
-        writer.writeheader()
+        # Se o arquivo não existir, escreve o cabeçalho
+        if not file_exists:
+            writer.writeheader()
+
+        # Extrai o título do vídeo do dicionário
+        video_title = video_info.get('title', '')
 
         # Escrever os dados
         for video_comment in data:
+            # Adicionar o título do vídeo a cada linha
+            video_comment['video_title'] = video_title
             writer.writerow(video_comment)
 
 # Exemplo de uso
