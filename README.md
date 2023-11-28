@@ -24,8 +24,22 @@ pip install wordcloud
 pip install nltk
 ```
 
-## Como Usar
+## Como criar a chave da API do Youtube
+Antes de usar o projeto, é necessário criar uma chave da API do Youtube.
+Para acessar o Console de APIs do Google e começar a usar a API do YouTube Data, siga estes passos:
 
+1. Primeiro, é necessário ter uma Conta do Google para acessar o Console de APIs, solicitar uma chave de API e registrar seu aplicativo.
+
+2. Inicie criando um projeto no [Google Developers Console] (https://console.developers.google.com/?hl=pt-br) para obter as credenciais de autorização. Isso permitirá que seu aplicativo envie solicitações de API.
+
+3. Após criar o projeto, verifique se a API do YouTube Data está habilitada para uso pelo seu aplicativo:
+  a. Acesse o Console de APIs e selecione o projeto recém-criado.
+  b. Vá para a página de APIs ativadas. Verifique na lista de APIs se a API do YouTube Data v3 está habilitada e com status ATIVADO para garantir seu 
+  funcionamento corretamente pelo aplicativo.
+
+Para mais informações consulte o site: [Visão geral da API YouTube Data] (https://developers.google.com/youtube/v3/getting-started?hl=pt-br)
+
+## Como usar o projeto
 Para usar o projeto, siga estas etapas:
 
 1. Clone o repositório para o seu ambiente local:
