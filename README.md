@@ -69,6 +69,6 @@ git push origin minha-contribuicao
 
 ## Contato
 Para sugestões ou mais informações, entre em contato:
-- Maria Eduarda - maria.grossi1@estudante.ufla.br
-- Matheus - [email]
-- Raissa - [email]
+- @dudaGrossi - maria.grossi1@estudante.ufla.br
+- @matheusdinizdev - matheus.diniz@estudante.ufla.br
+- @raissaro - raissa.oliveira@estudante.ufla.br
