@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
 import os
-from youtubeApi import getComments, search_videos, adicionarCSV, save_to_csv
+from youtubeApi import getComments, search_videos, save_to_csv
 import numpy as np
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
@@ -80,13 +80,6 @@ def about():
 @app.route('/imagens/<path:filename>')
 def download_file(filename):
     return send_from_directory(os.path.join(app.root_path, 'imagens'), filename)
-
-@app.route('/api/salvarcsv/<video_id>', methods=['GET'])
-def salvar_csv(video_id):
-    comentarios = adicionarCSV(video_id)
-    save_to_csv(comentarios)
-
-    return 'Dados salvos em arquivo CSV!'
 
 if __name__=="__main__":
     app.run(debug=True)

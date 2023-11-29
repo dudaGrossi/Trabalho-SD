@@ -51,25 +51,6 @@ def search_videos(assunto, max_results=5):
 
     return videos
 
-def adicionarCSV(video_id):
-    # Exemplo para listar os comentários de um vídeo
-    response = youtube.commentThreads().list(
-        part='snippet',
-        videoId=video_id,
-        maxResults=6
-    ).execute()
-
-    # Cria uma lista de comentários
-    comments = []
-
-    # Preenche a lista de comentários com os atributos 'Autor' e 'Comentário'
-    for item in response['items']:
-        comment = item['snippet']['topLevelComment']['snippet']['textOriginal']
-        author = item['snippet']['topLevelComment']['snippet']['authorDisplayName']
-        comments.append({'author': author, 'comment': comment})
-
-    return comments
-
 def save_to_csv(video_info, data):
     # Nome do arquivo CSV para salvar os dados
     csv_file = 'videos_comentarios.csv'
