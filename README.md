@@ -4,6 +4,7 @@ O projeto **YoutubeComments** foi desenvolvido como parte da disciplina de Siste
 
 ## Índices
 - [Instalação](#instalação)
+- [Como criar a chave da API do Youtube](#como-criar-a-chave-da-api-do-youtube)
 - [Como Usar](#como-usar)
 - [Exemplos de Uso](#exemplos-de-uso)
 - [Configuração](#configuração)
@@ -47,12 +48,17 @@ Para usar o projeto, siga estas etapas:
 git clone https://github.com/seu-username/YoutubeComments.git
 ```
 2. Abra o terminal na pasta do projeto.
-3. Execute o comando:
+3. No arquivo **youtubeApi.py** modifique a linha 6 do código e insira sua chave API do Youtube.
+```bash
+# Substitua 'YOUR_API_KEY' com a sua chave de API
+api_key = "YOUR_API_KEY"
+```
+4. Execute o comando:
 ```bash
 python app.py
 ```
-4. Abra o navegador e vá para http://127.0.0.1:5000/.
-5. Insira o termo de pesquisa na caixa de texto e clique em "Pesquisar".
+5. Abra o navegador e vá para http://127.0.0.1:5000/.
+6. Insira o termo de pesquisa na caixa de texto e clique em "Pesquisar".
 
 ## Exemplos de Uso
 - Após a pesquisa, você receberá uma lista de vídeos do Youtube relacionados ao termo pesquisado.
