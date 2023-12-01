@@ -13,8 +13,15 @@ O projeto **YoutubeComments** foi desenvolvido como parte da disciplina de Siste
 
 ## Instalação
 
-Certifique-se de ter o Python e o pip instalados. Execute os seguintes comandos para instalar as dependências necessárias:
+Certifique-se de ter o Python e o pip instalados. Execute o seguinte comando para instalar as dependências necessárias:
 
+```bash
+pip install .
+```
+
+Lembre-se de que, ao usar o pip install ., é recomendável estar no diretório raiz do seu projeto onde o setup.py está localizado.
+
+Isso instalará todas as dependências listadas no arquivo setup.py. Se preferir instalar manualmente, você também pode usar os comandos individuais:
 ```bash
 pip install flask
 pip install google-auth-oauthlib

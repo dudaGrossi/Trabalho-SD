@@ -3,7 +3,7 @@ import csv
 import os
 
 # Substitua 'YOUR_API_KEY' com a sua chave de API
-api_key = "YOUR_API_KEY"
+api_key = "AIzaSyBAvzcfBS0o5lYGNXYKRkh9bKcHGbme3NI"
 youtube = build('youtube', 'v3', developerKey=api_key)
 
 
