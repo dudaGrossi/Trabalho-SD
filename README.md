@@ -3,6 +3,7 @@
 O projeto **YoutubeComments** foi desenvolvido como parte da disciplina de Sistemas Distribuídos do curso de Ciência da Computação da Universidade Federal de Lavras (UFLA). O objetivo do projeto é realizar Web Scraping em vídeos do Youtube utilizando Flask. Isso permite obter informações sobre 5 vídeos relacionados a um tema específico, incluindo 5 comentários para auxiliar na decisão de assistir ou não ao vídeo. O projeto é desenvolvido em Python, com a interface do usuário em HTML, e foi utilizado o VSCode como plataforma de desenvolvimento.
 
 ## Índices
+- [Arquitetura](#arquitetura)
 - [Instalação](#instalação)
 - [Como criar a chave da API do Youtube](#como-criar-a-chave-da-api-do-youtube)
 - [Como Usar](#como-usar)
@@ -10,6 +11,37 @@ O projeto **YoutubeComments** foi desenvolvido como parte da disciplina de Siste
 - [Configuração](#configuração)
 - [Contribuição](#contribuição)
 - [Contato](#contato)
+
+## Arquitetura
+A arquitetura do projeto é projetada para atender às solicitações dos clientes, encaminhando-as para a API do YouTube e retornando as respostas apropriadas aos clientes. Este fluxo é facilitado por uma **arquitetura centralizada e baseada em eventos**.
+
+### Componentes Principais
+#### Cliente: 
+
+- O cliente inicia a interação, enviando solicitações para o servidor por meio do clique no botão.
+
+#### Servidor:
+
+- Nosso servidor atua como um intermediário entre o cliente e a API do YouTube.
+- Recebe as solicitações do cliente.
+- Encaminha essas solicitações para a API do YouTube.
+
+#### API do YouTube:
+
+- A API do YouTube processa as solicitações recebidas do nosso servidor.
+- Retorna os resultados pertinentes ao nosso servidor.
+
+### Fluxo de Comunicação
+1. O cliente envia uma solicitação para o nosso servidor, sendo ela a pesquisa de um assunto no Youtube.
+2. O servidor recebe a solicitação do cliente e encaminha a solicitação para a API do YouTube.
+3. A API do YouTube processa a solicitação e retorna os resultados relevantes ao nosso servidor.
+4. Nosso servidor recebe a resposta da API do YouTube e a encaminha de volta ao cliente.
+
+### Estrutura de Eventos
+- **Solicitação do Cliente**: Evento desencadeado quando o cliente faz uma requisição ao servidor.
+- **Encaminhamento para a API**: Evento desencadeado quando o servidor encaminha a solicitação do cliente para a API do YouTube.
+- **Resposta da API**: Evento desencadeado quando a API do YouTube responde ao servidor.
+- **Resposta ao Cliente**: Evento desencadeado quando o servidor envia a resposta da API de volta ao cliente.
 
 ## Instalação
 
