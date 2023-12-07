@@ -31,12 +31,19 @@ def buscar_videos():
         video['url'] = f"https://www.youtube.com/watch?v={video_id}"
 
         # WordCloud para os cinco primeiros comentários de cada vídeo
+        text = ' '.join(comentario['comment'] for comentario in comentarios)
+        
+        if not text:
+            # Se não houver palavras suficientes, imprima uma mensagem
+            print(f"Não há palavras suficientes para a pesquisa: {termo_pesquisa}")
+            continue
+
         wordcloud = WordCloud(
             background_color='black',
             width=400,
             height=200,
             stopwords=set(stopwords.words('portuguese'))
-        ).generate(' '.join(comentario['comment'] for comentario in comentarios))
+        ).generate(text)
 
         # Adiciona os dados nas listas
         comentarios_por_video.append({'video': video, 'comentarios': comentarios})
