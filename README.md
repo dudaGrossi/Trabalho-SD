@@ -15,6 +15,10 @@ O projeto **YoutubeComments** foi desenvolvido como parte da disciplina de Siste
 ## Arquitetura
 A arquitetura do projeto é projetada para atender às solicitações dos clientes, encaminhando-as para a API do YouTube e retornando as respostas apropriadas aos clientes. Este fluxo é facilitado por uma **arquitetura centralizada e baseada em eventos**.
 
+### Arquitetura de Sistema
+![Arquitetura de Sistema](./trabalho_praticoSD/imagens/ArquiteturaSistema.drawio.png)
+
+
 ### Componentes Principais
 #### Cliente: 
 
@@ -43,6 +47,9 @@ A arquitetura do projeto é projetada para atender às solicitações dos client
 - **Resposta da API**: Evento desencadeado quando a API do YouTube responde ao servidor.
 - **Resposta ao Cliente**: Evento desencadeado quando o servidor envia a resposta da API de volta ao cliente.
 
+
+### Arquitetura de Software
+![Arquitetura de Software](./trabalho_praticoSD/imagens/ArquiteturaSoftware.png)
 ## Instalação
 
 Certifique-se de ter o Python e o pip instalados. Execute o seguinte comando para instalar as dependências necessárias:
