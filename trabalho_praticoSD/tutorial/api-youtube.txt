@@ -51,6 +51,8 @@ def search_videos(assunto, max_results=5):
 
     return videos
 
+# Substitua 'tema' pelo tema que você deseja pesquisar 
+# Exemplo: resultados = search_videos('Melhor matéria do DCC: Sistemas Distribuídos', max_results=5)
 resultados = search_videos('tema', max_results=5)
 for video in resultados:
     print(f'Título: {video["title"]}')
