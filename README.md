@@ -6,7 +6,7 @@ O projeto **YoutubeComments** foi desenvolvido como parte da disciplina de Siste
 - [Arquitetura](#arquitetura)
 - [Instalação](#instalação)
 - [Como criar a chave da API do Youtube](#como-criar-a-chave-da-api-do-youtube)
-- [Como Usar](#como-usar)
+- [Como usar o projeto](#como-usar-o-projeto)
 - [Exemplos de Uso](#exemplos-de-uso)
 - [Configuração](#configuração)
 - [Contribuição](#contribuição)
@@ -91,16 +91,15 @@ Para usar o projeto, siga estas etapas:
 
 1. Clone o repositório para o seu ambiente local:
 ```bash
-git clone https://github.com/dudaGrossi/Trabalho-SD.git
+git clone https://github.com/seu-username/YoutubeComments.git
 ```
-2. No arquivo **youtubeApi.py** modifique a linha 6 do código e insira sua chave API do Youtube.
+2. Abra o terminal na pasta do projeto.
+3. No arquivo **youtubeApi.py** modifique a linha 6 do código e insira sua chave API do Youtube.
 ```bash
 # Substitua 'YOUR_API_KEY' com a sua chave de API
 api_key = "YOUR_API_KEY"
 ```
-3. Abra o terminal na pasta do projeto.
-4. Instale as dependências.
-5. Execute o comando:
+4. Execute o comando:
 ```bash
 python app.py
 ```
