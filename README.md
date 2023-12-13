@@ -101,7 +101,7 @@ api_key = "YOUR_API_KEY"
 ```
 4. Execute o comando:
 ```bash
-python app.py
+python3 app.py (Linux/MacOS) || python app.py (Windows)
 ```
 5. Abra o navegador e vá para http://127.0.0.1:5000/.
 6. Insira o termo de pesquisa na caixa de texto e clique em "Pesquisar".
