@@ -91,15 +91,16 @@ Para usar o projeto, siga estas etapas:
 
 1. Clone o repositório para o seu ambiente local:
 ```bash
-git clone https://github.com/seu-username/YoutubeComments.git
+git clone https://github.com/dudaGrossi/Trabalho-SD.git
 ```
-2. Abra o terminal na pasta do projeto.
-3. No arquivo **youtubeApi.py** modifique a linha 6 do código e insira sua chave API do Youtube.
+2. No arquivo **youtubeApi.py** modifique a linha 6 do código e insira sua chave API do Youtube.
 ```bash
 # Substitua 'YOUR_API_KEY' com a sua chave de API
 api_key = "YOUR_API_KEY"
 ```
-4. Execute o comando:
+3. Abra o terminal na pasta do projeto.
+4. Instale as dependências.
+5. Execute o comando:
 ```bash
 python app.py
 ```
